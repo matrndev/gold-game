@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://sr378dbrgvib"]
+
+[ext_resource type="Script" uid="uid://uykj20aof0aa" path="res://scripts/stats_display.gd" id="1_3q2kr"]
+
+[node name="StatsDisplay" type="Control" unique_id=1796219019]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3q2kr")
+
+[node name="Panel" type="Panel" parent="." unique_id=2111306025]
+layout_mode = 1
+offset_right = 176.0
+offset_bottom = 368.0
+
+[node name="CurrentGoldLabel" type="Label" parent="Panel" unique_id=989828705]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -36.0
+offset_top = 56.0
+offset_right = -16.0
+offset_bottom = 105.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 35
+text = "0"
+
+[node name="Label" type="Label" parent="Panel" unique_id=2075116601]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 6.0
+offset_right = 49.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "Inventory"
+
+[node name="TransactionList" type="ItemList" parent="Panel" unique_id=1559906338]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 120.0
+offset_bottom = 354.0
+grow_horizontal = 2

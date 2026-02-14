@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://du52856eooxbp"]
+
+[ext_resource type="Script" uid="uid://dgndfhumpc47h" path="res://scripts/player.gd" id="1_3vyb7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
+size = Vector2(42, 73)
+
+[node name="Player" type="CharacterBody2D" unique_id=17698573]
+script = ExtResource("1_3vyb7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=427708587]
+offset_right = 42.0
+offset_bottom = 73.0
+color = Color(0.39487293, 0.50814635, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1523324398]
+position = Vector2(21, 36.5)
+shape = SubResource("RectangleShape2D_u8vuu")
+
+[node name="CurrentGoldLabel" type="Label" parent="." unique_id=1741609613]
+offset_right = 40.0
+offset_bottom = 23.0
