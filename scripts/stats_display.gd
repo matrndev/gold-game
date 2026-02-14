@@ -2,8 +2,7 @@ extends Control
 
 var max_list_size: int = 8
 
-var current_gold: int
-var gold_transactions: Array[int]
+var gold_transactions: Array[int] = StoredStats.gold_transactions
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +11,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	$Panel/CurrentGoldLabel.text = str(current_gold)
+	$Panel/CurrentGoldLabel.text = str(StoredStats.gold_inventory)
+	$Panel2/StoredGoldLabel.text = str(StoredStats.stored_gold)
 	
 	$Panel/TransactionList.clear()
 	var last_transactions = gold_transactions.slice(-max_list_size, gold_transactions.size())

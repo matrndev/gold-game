@@ -1,23 +1,17 @@
 extends Area2D
 
-@export var gold_generation_interval: float = 1.0
-
 var current_gold: int
 
 var active_miners: Array[Node2D]
-
-
-func _ready() -> void:
-	$GoldGeneratorTimer.wait_time = gold_generation_interval
 
 
 func _on_body_entered(body: Node2D) -> void:
 	body.modulate = Color(1.0, 0.0, 0.0, 1.0)
 	
 	if body.name == "Player":
-		body.gold_transactions.append(current_gold)
+		StoredStats.gold_transactions.append(current_gold)
 		
-		body.current_gold += current_gold
+		StoredStats.gold_inventory += current_gold
 		current_gold = 0
 		update_gold_meter()
 
