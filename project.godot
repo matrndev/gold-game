@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="gold-game"
-run/main_scene="uid://qlsjm4h0yu0t"
+run/main_scene="uid://ck28j5c3aiwja"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 StoredStats="*uid://dx5ftehpti7vu"
+SceneManager="*uid://dwva15ajxu12y"
 
 [editor_plugins]
 
