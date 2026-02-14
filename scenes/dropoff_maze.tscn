@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dxeu43c3cd3vj"]
+
+[ext_resource type="PackedScene" uid="uid://sr378dbrgvib" path="res://scenes/stats_display.tscn" id="1_yf3ke"]
+[ext_resource type="PackedScene" uid="uid://du52856eooxbp" path="res://scenes/player.tscn" id="2_423gv"]
+[ext_resource type="PackedScene" uid="uid://ckkqtsg0sdhi0" path="res://scenes/dropoff_point.tscn" id="3_ari78"]
+[ext_resource type="PackedScene" uid="uid://ceicr8kws2df6" path="res://scenes/teleport.tscn" id="4_rks7g"]
+
+[node name="DropoffMaze" type="Node2D" unique_id=226396710]
+
+[node name="Player" parent="." unique_id=17698573 instance=ExtResource("2_423gv")]
+z_index = 1
+position = Vector2(538, 427)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=494180378]
+position = Vector2(-538, -427)
+anchor_mode = 0
+zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true
+
+[node name="DropoffPoint" parent="." unique_id=1478688328 instance=ExtResource("3_ari78")]
+position = Vector2(437, 146)
+
+[node name="Teleport" parent="." unique_id=1789713122 instance=ExtResource("4_rks7g")]
+position = Vector2(45, 48)
+go_to = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=95386620]
+
+[node name="StatsDisplay" parent="CanvasLayer" unique_id=1796219019 instance=ExtResource("1_yf3ke")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 975.0
+offset_top = 85.0
+offset_right = 975.0
+offset_bottom = 85.0
+grow_horizontal = 1
+grow_vertical = 1
