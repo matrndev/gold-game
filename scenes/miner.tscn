@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cxsas77blfytp"]
+
+[ext_resource type="Script" uid="uid://dfxvvs38a63tj" path="res://scripts/miner.gd" id="1_5x4dd"]
+
+[node name="Miner" type="Node2D" unique_id=1412825265]
+script = ExtResource("1_5x4dd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1240134781]
+offset_right = 61.0
+offset_bottom = 37.0
+color = Color(1, 1, 0.46666667, 1)
+
+[node name="Label" type="Label" parent="." unique_id=554807834]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+text = "miner 0"
+
+[node name="MineTimer" type="Timer" parent="." unique_id=1734390862]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="MineTimer" to="." method="_on_mine_timer_timeout"]

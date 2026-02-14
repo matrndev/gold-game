@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://6s46f6x0j666" path="res://scripts/gold_mine.gd" id="1_onqde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxdec"]
-size = Vector2(351, 143)
+size = Vector2(211, 106)
 
 [node name="GoldMine" type="Area2D" unique_id=42676644]
 script = ExtResource("1_onqde")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1812988685]
-offset_right = 351.0
-offset_bottom = 143.0
+offset_right = 211.0
+offset_bottom = 106.0
 color = Color(0.13682577, 0.13682574, 0.13682571, 1)
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=1340242059]
@@ -42,13 +42,70 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 33
 text = "0"
 
+[node name="MineButton" type="Button" parent="ColorRect" unique_id=250490989]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.5
+offset_top = -31.0
+offset_right = 23.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Mine"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1424427795]
-position = Vector2(175.5, 71.5)
+position = Vector2(105.5, 53)
 shape = SubResource("RectangleShape2D_dxdec")
+
+[node name="ButtonDebounceTimer" type="Timer" parent="." unique_id=916584692]
+one_shot = true
 
 [node name="GoldGeneratorTimer" type="Timer" parent="." unique_id=1579730510]
 autostart = true
 
+[node name="MinerPlaceholder0" type="Node2D" parent="." unique_id=1382922412 groups=["miner_placeholders"]]
+position = Vector2(-64, 0)
+
+[node name="ColorRect" type="ColorRect" parent="MinerPlaceholder0" unique_id=755481325]
+offset_right = 61.0
+offset_bottom = 37.0
+color = Color(0, 0, 0, 1)
+
+[node name="MinerPlaceholder1" type="Node2D" parent="." unique_id=640568936 groups=["miner_placeholders"]]
+position = Vector2(-64, 56)
+
+[node name="ColorRect" type="ColorRect" parent="MinerPlaceholder1" unique_id=548657227]
+offset_right = 61.0
+offset_bottom = 37.0
+color = Color(0, 0, 0, 1)
+
+[node name="MinerPlaceholder2" type="Node2D" parent="." unique_id=568884878 groups=["miner_placeholders"]]
+position = Vector2(214, 0)
+
+[node name="ColorRect" type="ColorRect" parent="MinerPlaceholder2" unique_id=818820403]
+offset_right = 61.0
+offset_bottom = 37.0
+color = Color(0, 0, 0, 1)
+
+[node name="MinerPlaceholder3" type="Node2D" parent="." unique_id=575515001 groups=["miner_placeholders"]]
+position = Vector2(214, 56)
+
+[node name="ColorRect" type="ColorRect" parent="MinerPlaceholder3" unique_id=217071263]
+offset_right = 61.0
+offset_bottom = 37.0
+color = Color(0, 0, 0, 1)
+
+[node name="AddMinerButton" type="Button" parent="." unique_id=1918122445]
+offset_left = 53.0
+offset_top = -35.0
+offset_right = 161.0
+offset_bottom = -4.0
+text = "create miner"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="timeout" from="GoldGeneratorTimer" to="." method="_on_gold_generator_timer_timeout"]
+[connection signal="pressed" from="ColorRect/MineButton" to="." method="_on_mine_button_pressed"]
+[connection signal="pressed" from="AddMinerButton" to="." method="_on_add_miner_button_pressed"]

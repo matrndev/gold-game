@@ -16,6 +16,6 @@ func _physics_process(_delta) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
-	$CurrentGoldLabel.text = str(current_gold)
+	$CurrentGoldLabel.text = str(StoredStats.stored_gold)
 	$"../StatsDisplay".current_gold = current_gold
 	$"../StatsDisplay".gold_transactions = gold_transactions
