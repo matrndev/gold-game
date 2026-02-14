@@ -14,8 +14,8 @@ position = Vector2(538, 427)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=494180378]
 position = Vector2(-538, -427)
 anchor_mode = 0
-zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
+position_smoothing_speed = 8.0
 
 [node name="DropoffPoint" parent="." unique_id=1478688328 instance=ExtResource("3_ari78")]
 position = Vector2(437, 146)
