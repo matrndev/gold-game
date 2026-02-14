@@ -61,13 +61,11 @@ position = Vector2(105.5, 53)
 shape = SubResource("RectangleShape2D_dxdec")
 
 [node name="ButtonDebounceTimer" type="Timer" parent="." unique_id=916584692]
+wait_time = 0.1
 one_shot = true
 
-[node name="GoldGeneratorTimer" type="Timer" parent="." unique_id=1579730510]
-autostart = true
-
 [node name="MinerPlaceholder0" type="Node2D" parent="." unique_id=1382922412 groups=["miner_placeholders"]]
-position = Vector2(-64, 0)
+position = Vector2(-64, 6)
 
 [node name="ColorRect" type="ColorRect" parent="MinerPlaceholder0" unique_id=755481325]
 offset_right = 61.0
@@ -75,7 +73,7 @@ offset_bottom = 37.0
 color = Color(0, 0, 0, 1)
 
 [node name="MinerPlaceholder1" type="Node2D" parent="." unique_id=640568936 groups=["miner_placeholders"]]
-position = Vector2(-64, 56)
+position = Vector2(-64, 63)
 
 [node name="ColorRect" type="ColorRect" parent="MinerPlaceholder1" unique_id=548657227]
 offset_right = 61.0
@@ -83,7 +81,7 @@ offset_bottom = 37.0
 color = Color(0, 0, 0, 1)
 
 [node name="MinerPlaceholder2" type="Node2D" parent="." unique_id=568884878 groups=["miner_placeholders"]]
-position = Vector2(214, 0)
+position = Vector2(214, 7)
 
 [node name="ColorRect" type="ColorRect" parent="MinerPlaceholder2" unique_id=818820403]
 offset_right = 61.0
@@ -91,7 +89,7 @@ offset_bottom = 37.0
 color = Color(0, 0, 0, 1)
 
 [node name="MinerPlaceholder3" type="Node2D" parent="." unique_id=575515001 groups=["miner_placeholders"]]
-position = Vector2(214, 56)
+position = Vector2(214, 63)
 
 [node name="ColorRect" type="ColorRect" parent="MinerPlaceholder3" unique_id=217071263]
 offset_right = 61.0
