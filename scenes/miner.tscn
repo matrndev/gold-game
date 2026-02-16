@@ -6,15 +6,25 @@
 script = ExtResource("1_5x4dd")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1240134781]
-offset_right = 61.0
+offset_right = 85.0
 offset_bottom = 37.0
 color = Color(1, 1, 0.46666667, 1)
 
-[node name="Label" type="Label" parent="." unique_id=554807834]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="ColorRect" unique_id=554807834]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -11.5
+offset_right = 41.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 1, 1)
-text = "miner 0"
+text = "Autominer"
 
 [node name="MineTimer" type="Timer" parent="." unique_id=1734390862]
 wait_time = 0.5

@@ -6,7 +6,7 @@ extends Node2D
 signal mined
 
 func _ready() -> void:
-	$Label.text = "miner " + str(miner_id)
+	#$Label.text = "miner " + str(miner_id)
 	$MineTimer.wait_time = miner_speed
 
 
