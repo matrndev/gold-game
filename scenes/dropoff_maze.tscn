@@ -2,7 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://sr378dbrgvib" path="res://scenes/stats_display.tscn" id="1_yf3ke"]
 [ext_resource type="PackedScene" uid="uid://ckkqtsg0sdhi0" path="res://scenes/dropoff_point.tscn" id="3_ari78"]
+[ext_resource type="PackedScene" uid="uid://bo731d1lnc1sh" path="res://scenes/enemy.tscn" id="4_5cneu"]
 [ext_resource type="PackedScene" uid="uid://ceicr8kws2df6" path="res://scenes/teleport.tscn" id="4_rks7g"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ari78"]
+vertices = PackedVector2Array(914.8828, 992, 132.75781, 992, 115.25, 278.9375, 906.1172, 275.03906)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(105, 269, 916, 265, 925, 1002, 123, 1002)])
 
 [node name="DropoffMaze" type="Node2D" unique_id=226396710]
 
@@ -25,3 +31,10 @@ offset_right = 975.0
 offset_bottom = 85.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1984694652]
+position = Vector2(-123, 64)
+navigation_polygon = SubResource("NavigationPolygon_ari78")
+
+[node name="Enemy" parent="." unique_id=1309421750 instance=ExtResource("4_5cneu")]
+position = Vector2(307, 382)

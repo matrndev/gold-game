@@ -11,26 +11,26 @@
 
 [node name="Player" parent="." unique_id=17698573 instance=ExtResource("1_uwrxv")]
 z_index = 1
-position = Vector2(537, 325)
+position = Vector2(576, 325)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1762266604]
 position = Vector2(549, 632)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1374680950]
+[node name="WorldBoundary1" type="CollisionShape2D" parent="StaticBody2D" unique_id=1374680950]
 position = Vector2(0, 14)
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1653151631]
+[node name="WorldBoundary2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1653151631]
 position = Vector2(-547, -327)
 rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=951494155]
+[node name="WorldBoundary3" type="CollisionShape2D" parent="StaticBody2D" unique_id=951494155]
 position = Vector2(-26, -630)
 rotation = 3.1415927
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1712583081]
+[node name="WorldBoundary4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1712583081]
 position = Vector2(601, -312)
 rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
@@ -38,7 +38,15 @@ shape = SubResource("WorldBoundaryShape2D_uwrxv")
 [node name="GoldMine" parent="." unique_id=42676644 instance=ExtResource("2_yqjtg")]
 position = Vector2(88, 518)
 
-[node name="StatsDisplay" parent="." unique_id=1796219019 instance=ExtResource("3_lnu2h")]
+[node name="GoldMine2" parent="." unique_id=724581019 instance=ExtResource("2_yqjtg")]
+position = Vector2(486, 517)
+
+[node name="Teleport" parent="." unique_id=1789713122 instance=ExtResource("4_lbhrr")]
+position = Vector2(572, 61)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1014944666]
+
+[node name="StatsDisplay" parent="CanvasLayer" unique_id=1796219019 instance=ExtResource("3_lnu2h")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -48,6 +56,3 @@ offset_right = 975.0
 offset_bottom = 85.0
 grow_horizontal = 1
 grow_vertical = 1
-
-[node name="Teleport" parent="." unique_id=1789713122 instance=ExtResource("4_lbhrr")]
-position = Vector2(572, 61)

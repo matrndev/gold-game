@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var movement_speed = 300
+@export var movement_speed: float = 300
 
 var current_gold: int = StoredStats.gold_inventory
 var gold_transactions: Array[int] = StoredStats.gold_transactions

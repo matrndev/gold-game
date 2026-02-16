@@ -4,9 +4,14 @@ extends Node
 var mining_facility_scene: Node2D
 var active_scene: Node
 
+var player_position: Vector2
+
 func _ready() -> void:
 	mining_facility_scene = load("res://scenes/game.tscn").instantiate()
 	get_tree().root.call_deferred("add_child", mining_facility_scene)
+
+func _process(_delta: float) -> void:
+	player_position = mining_facility_scene.get_child(0).position
 
 func mining_scene_active(active: bool) -> void:
 	# this below doesnt work, keep it disabled!
@@ -15,8 +20,11 @@ func mining_scene_active(active: bool) -> void:
 	for area in mining_facility_scene.find_children("*", "Area2D", true, false): # disable collisions with teleports and gold mines
 		area.set_deferred("monitoring", active)
 		area.set_deferred("monitorable", active)
+
+	for area in mining_facility_scene.find_children("WorldBoundary*", "CollisionShape2D", true, false): # make boundaries disabled
+		area.set_deferred("disabled", !active)
 	
-	# retain the player, but hide everything else
+	# retain the player from the mining scene, but hide everything else
 	for child in mining_facility_scene.get_children():
 		if child.name != "Player":
 			child.visible = active

@@ -16,3 +16,7 @@ color = Color(0.39487293, 0.50814635, 1, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1523324398]
 position = Vector2(21, 36.5)
 shape = SubResource("RectangleShape2D_u8vuu")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2105424248]
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
