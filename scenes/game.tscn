@@ -11,7 +11,7 @@
 
 [node name="Player" parent="." unique_id=17698573 instance=ExtResource("1_uwrxv")]
 z_index = 1
-position = Vector2(576, 325)
+position = Vector2(459, 56)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1762266604]
 position = Vector2(549, 632)
@@ -35,11 +35,26 @@ position = Vector2(601, -312)
 rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
-[node name="GoldMine" parent="." unique_id=42676644 instance=ExtResource("2_yqjtg")]
-position = Vector2(121, 528)
+[node name="GoldMine4" parent="." unique_id=42676644 instance=ExtResource("2_yqjtg")]
+position = Vector2(109, 365)
+
+[node name="GoldMine3" parent="." unique_id=1307804084 instance=ExtResource("2_yqjtg")]
+position = Vector2(636, 365)
+
+[node name="GoldMine2" parent="." unique_id=679910674 instance=ExtResource("2_yqjtg")]
+position = Vector2(636, 525)
+
+[node name="GoldMine" parent="." unique_id=929020174 instance=ExtResource("2_yqjtg")]
+position = Vector2(108, 525)
+
+[node name="GoldMine5" parent="." unique_id=1726841126 instance=ExtResource("2_yqjtg")]
+position = Vector2(109, 205)
+
+[node name="GoldMine6" parent="." unique_id=1064258354 instance=ExtResource("2_yqjtg")]
+position = Vector2(636, 205)
 
 [node name="Teleport" parent="." unique_id=1789713122 instance=ExtResource("4_lbhrr")]
-position = Vector2(572, 61)
+position = Vector2(21, 21)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1014944666]
 
@@ -53,9 +68,3 @@ offset_right = 975.0
 offset_bottom = 85.0
 grow_horizontal = 1
 grow_vertical = 1
-
-[node name="GoldMine2" parent="." unique_id=1894555577 instance=ExtResource("2_yqjtg")]
-position = Vector2(592, 520)
-
-[node name="GoldMine3" parent="." unique_id=1678835170 instance=ExtResource("2_yqjtg")]
-position = Vector2(116, 378)

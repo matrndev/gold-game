@@ -1,22 +1,23 @@
 [gd_scene format=3 uid="uid://dxeu43c3cd3vj"]
 
+[ext_resource type="Script" uid="uid://cgdpvft1nxww5" path="res://scripts/dropoff_maze.gd" id="1_5cneu"]
 [ext_resource type="PackedScene" uid="uid://sr378dbrgvib" path="res://scenes/stats_display.tscn" id="1_yf3ke"]
 [ext_resource type="PackedScene" uid="uid://ckkqtsg0sdhi0" path="res://scenes/dropoff_point.tscn" id="3_ari78"]
-[ext_resource type="PackedScene" uid="uid://bo731d1lnc1sh" path="res://scenes/enemy.tscn" id="4_5cneu"]
 [ext_resource type="PackedScene" uid="uid://ceicr8kws2df6" path="res://scenes/teleport.tscn" id="4_rks7g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ari78"]
-vertices = PackedVector2Array(914.8828, 992, 132.75781, 992, 115.25, 278.9375, 906.1172, 275.03906)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(105, 269, 916, 265, 925, 1002, 123, 1002)])
+vertices = PackedVector2Array(527.3828, 891, 296.0078, 663.72656, 289.14844, 126.84375, 971, 241.45313, 971, 346.65625, 917.90625, 916.96875, 1432.6875, 225.75, 1531.4766, 866.89844, 1252.5313, 346.53125, 319.6328, 889.0625, 276.32813, 787.71875, 1153.1484, 353.0078, 1280.7813, 254.6875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 5, 8), PackedInt32Array(0, 9, 10, 1), PackedInt32Array(5, 4, 11), PackedInt32Array(5, 11, 8), PackedInt32Array(6, 8, 12)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(279, 115, 981, 233, 981, 337, 1153, 343, 1245, 337, 1273, 246, 1441, 214, 1543, 876, 918, 927, 527, 901, 313, 899, 266, 789, 286, 663)])
 
 [node name="DropoffMaze" type="Node2D" unique_id=226396710]
+script = ExtResource("1_5cneu")
 
 [node name="DropoffPoint" parent="." unique_id=1478688328 instance=ExtResource("3_ari78")]
-position = Vector2(675, 147)
+position = Vector2(50, 408)
 
 [node name="Teleport" parent="." unique_id=1789713122 instance=ExtResource("4_rks7g")]
-position = Vector2(45, 48)
+position = Vector2(703, 40)
 go_to = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=95386620]
@@ -33,8 +34,20 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1984694652]
-position = Vector2(-123, 64)
+position = Vector2(-286, -202)
 navigation_polygon = SubResource("NavigationPolygon_ari78")
 
-[node name="Enemy" parent="." unique_id=1309421750 instance=ExtResource("4_5cneu")]
-position = Vector2(307, 382)
+[node name="EnemySpawnTimer" type="Timer" parent="." unique_id=289779966]
+wait_time = 3.0
+autostart = true
+
+[node name="Label" type="Label" parent="." unique_id=1292706261]
+offset_left = 83.0
+offset_top = 72.0
+offset_right = 449.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 20
+text = "Enemies will try to steal your Gold!
+Click on the enemies to combat them."
+
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
