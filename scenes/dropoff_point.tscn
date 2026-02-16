@@ -3,25 +3,40 @@
 [ext_resource type="Script" uid="uid://bjep8ynyob7l4" path="res://scripts/dropoff_point.gd" id="1_vvmqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xep4y"]
-size = Vector2(143, 71)
+size = Vector2(228, 114)
 
 [node name="DropoffPoint" type="Area2D" unique_id=1478688328]
 script = ExtResource("1_vvmqf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1356067407]
-offset_right = 143.0
-offset_bottom = 71.0
+offset_right = 228.0
+offset_bottom = 114.0
 color = Color(0.5656475, 0.00023988367, 0.5682774, 1)
 
+[node name="Label" type="Label" parent="ColorRect" unique_id=662183535]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.5
+offset_top = -24.5
+offset_right = 86.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Stand here to transfer
+Gold into your storage"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1980319950]
-position = Vector2(71.5, 35.5)
+position = Vector2(114, 57)
 shape = SubResource("RectangleShape2D_xep4y")
 
-[node name="Label" type="Label" parent="." unique_id=662183535]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "dropoff point here"
+[node name="DropSpeed" type="Timer" parent="." unique_id=78817846]
+wait_time = 0.15
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="timeout" from="DropSpeed" to="." method="_on_drop_speed_timeout"]
