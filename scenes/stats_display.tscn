@@ -29,6 +29,23 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 35
 text = "0"
 
+[node name="Label2" type="Label" parent="Panel/CurrentGoldLabel" unique_id=587477447]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -5.0
+offset_right = 51.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.40069774, 0.40069774, 0.40069768, 1)
+theme_override_font_sizes/font_size = 8
+text = "Max. 100 Gold"
+
 [node name="Label" type="Label" parent="Panel" unique_id=2075116601]
 layout_mode = 1
 anchors_preset = 5

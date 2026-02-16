@@ -77,21 +77,20 @@ shape = SubResource("RectangleShape2D_dxdec")
 wait_time = 0.1
 one_shot = true
 
-[node name="MinerPlaceholder0" type="Node2D" parent="." unique_id=1382922412 groups=["miner_placeholders"]]
-position = Vector2(-64, 6)
+[node name="MinerPlaceholder0" type="Node2D" parent="." unique_id=647789649 groups=["miner_placeholders"]]
+position = Vector2(-89, 7)
 
-[node name="ColorRect" type="ColorRect" parent="MinerPlaceholder0" unique_id=755481325]
-offset_left = -24.0
-offset_right = 61.0
+[node name="ColorRect" type="ColorRect" parent="MinerPlaceholder0" unique_id=1703026862]
+offset_right = 85.0
 offset_bottom = 37.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="MinerPlaceholder1" type="Node2D" parent="." unique_id=640568936 groups=["miner_placeholders"]]
-position = Vector2(-64, 63)
+[node name="MinerPlaceholder1" type="Node2D" parent="." unique_id=1456019616 groups=["miner_placeholders"]]
+position = Vector2(-89, 63)
 
-[node name="ColorRect" type="ColorRect" parent="MinerPlaceholder1" unique_id=548657227]
-offset_left = -24.0
-offset_right = 61.0
+[node name="ColorRect" type="ColorRect" parent="MinerPlaceholder1" unique_id=432320111]
+offset_right = 85.0
 offset_bottom = 37.0
 color = Color(0, 0, 0, 1)
 
@@ -102,6 +101,7 @@ position = Vector2(214, 7)
 offset_right = 85.0
 offset_bottom = 37.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="MinerPlaceholder3" type="Node2D" parent="." unique_id=575515001 groups=["miner_placeholders"]]
 position = Vector2(214, 63)

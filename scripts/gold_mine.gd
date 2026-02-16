@@ -8,18 +8,24 @@ func _ready() -> void:
 	price_update(10)
 
 func _on_body_entered(body: Node2D) -> void:
-	body.modulate = Color(1.0, 0.0, 0.0, 1.0)
+	#body.modulate = Color(1.0, 0.0, 0.0, 1.0)
 	
 	if body.name == "Player":
-		StoredStats.gold_transactions.append(current_gold)
+		var space_left = 100 - StoredStats.gold_inventory
+		var gold_to_give = min(current_gold, space_left)
 		
-		StoredStats.gold_inventory += current_gold
-		current_gold = 0
+		if current_gold == 0:
+			return
+		
+		StoredStats.gold_transactions.append(gold_to_give)
+		StoredStats.gold_inventory += gold_to_give
+		current_gold -= gold_to_give
 		update_gold_meter()
 
 
 func _on_body_exited(body: Node2D) -> void:
-	body.modulate = Color(1.0, 1.0, 1.0, 1.0)
+	#body.modulate = Color(1.0, 1.0, 1.0, 1.0)
+	pass
 
 
 func update_gold_meter() -> void:
@@ -74,7 +80,7 @@ func _on_add_miner_button_pressed() -> void:
 	
 	if miner_successfully_added:
 		StoredStats.stored_gold -= current_price
-		price_update(current_price * 5)
+		price_update(current_price * 6)
 	else:
 		$AddMinerButton.hide()
 	
