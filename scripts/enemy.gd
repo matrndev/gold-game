@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@export var movement_speed: float = 170.0
+@export var movement_speed: float = 150.0
+@export var health: int = 8
 var movement_target_position: Vector2
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
@@ -47,3 +48,15 @@ func _on_stealing_timer_timeout() -> void:
 		return
 	StoredStats.gold_inventory -= 1
 	StoredStats.gold_transactions.append(-1)
+
+var tween: Tween
+func _on_kill_button_pressed() -> void:
+	$ColorRect.modulate = Color(0.26, 0.004, 0.161, 1.0)
+	if tween:
+		tween.kill()
+	tween = create_tween()
+	tween.tween_property($ColorRect, "modulate", Color.WHITE, 0.3)
+	
+	health -= 1
+	if health == 0:
+		queue_free()

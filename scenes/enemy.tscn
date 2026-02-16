@@ -31,8 +31,14 @@ shape = SubResource("RectangleShape2D_7p1mj")
 debug_color = Color(1.4439225e-06, 0.63154477, 0.4643941, 0.41960785)
 
 [node name="StealingTimer" type="Timer" parent="." unique_id=1213336987]
-wait_time = 0.1
+wait_time = 0.3
+
+[node name="KillButton" type="Button" parent="." unique_id=1358732599]
+offset_right = 43.0
+offset_bottom = 71.0
+flat = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="StealingTimer" to="." method="_on_stealing_timer_timeout"]
+[connection signal="pressed" from="KillButton" to="." method="_on_kill_button_pressed"]
