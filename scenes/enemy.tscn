@@ -5,6 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tegq"]
 size = Vector2(43, 71)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p1mj"]
+size = Vector2(61, 88)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=1309421750]
 script = ExtResource("1_7p1mj")
 
@@ -19,3 +22,17 @@ shape = SubResource("RectangleShape2D_8tegq")
 debug_color = Color(0.5533992, 0.40030515, 1, 0.41960785)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=411664600]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1356206227]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=609256355]
+position = Vector2(21.5, 36)
+shape = SubResource("RectangleShape2D_7p1mj")
+debug_color = Color(1.4439225e-06, 0.63154477, 0.4643941, 0.41960785)
+
+[node name="StealingTimer" type="Timer" parent="." unique_id=1213336987]
+wait_time = 0.1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="StealingTimer" to="." method="_on_stealing_timer_timeout"]

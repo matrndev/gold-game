@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-@export var movement_speed: float = 200.0
+@export var movement_speed: float = 170.0
 var movement_target_position: Vector2
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+
 
 func _ready() -> void:
 	navigation_agent.path_desired_distance = 4.0
@@ -30,3 +31,19 @@ func _physics_process(_delta: float) -> void:
 	
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 	move_and_slide()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		$StealingTimer.start()
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.name == "Player":
+		$StealingTimer.stop()
+
+
+func _on_stealing_timer_timeout() -> void:
+	if StoredStats.gold_inventory <= 0:
+		return
+	StoredStats.gold_inventory -= 1
+	StoredStats.gold_transactions.append(-1)
