@@ -11,7 +11,7 @@ script = ExtResource("1_w4hbs")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=486711240]
 offset_right = 178.0
 offset_bottom = 92.0
-color = Color(0, 0.9647059, 1, 1)
+color = Color(0.48705226, 0.4305239, 0.033776812, 1)
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=406510274]
 layout_mode = 1

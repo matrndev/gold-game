@@ -36,10 +36,7 @@ rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
 [node name="GoldMine" parent="." unique_id=42676644 instance=ExtResource("2_yqjtg")]
-position = Vector2(88, 518)
-
-[node name="GoldMine2" parent="." unique_id=724581019 instance=ExtResource("2_yqjtg")]
-position = Vector2(486, 517)
+position = Vector2(121, 528)
 
 [node name="Teleport" parent="." unique_id=1789713122 instance=ExtResource("4_lbhrr")]
 position = Vector2(572, 61)
@@ -56,3 +53,9 @@ offset_right = 975.0
 offset_bottom = 85.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="GoldMine2" parent="." unique_id=1894555577 instance=ExtResource("2_yqjtg")]
+position = Vector2(592, 520)
+
+[node name="GoldMine3" parent="." unique_id=1678835170 instance=ExtResource("2_yqjtg")]
+position = Vector2(116, 378)
