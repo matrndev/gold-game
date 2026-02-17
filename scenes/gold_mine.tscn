@@ -116,7 +116,7 @@ oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(459, 106)
 dialog_text = "You don't have enough Stored Gold to upgrade this mine!
-First, transfer gold from your inventory to storage."
+First, transfer gold from your inventory to storage using the Dropoff Point."
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
