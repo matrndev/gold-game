@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://uykj20aof0aa" path="res://scripts/stats_display.gd" id="1_3q2kr"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q2kr"]
+bg_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
+
 [node name="StatsDisplay" type="Control" unique_id=1796219019]
 layout_mode = 3
 anchors_preset = 15
@@ -15,6 +18,24 @@ script = ExtResource("1_3q2kr")
 layout_mode = 1
 offset_right = 176.0
 offset_bottom = 368.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3q2kr")
+
+[node name="MaxGoldLabel" type="Label" parent="Panel" unique_id=587477447]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -268.0
+offset_right = 105.0
+offset_bottom = -238.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.40069774, 0.40069774, 0.40069768, 1)
+theme_override_font_sizes/font_size = 10
+text = "Max. 100 Gold"
 
 [node name="CurrentGoldLabel" type="Label" parent="Panel" unique_id=989828705]
 layout_mode = 1
@@ -28,23 +49,6 @@ offset_bottom = 105.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 35
 text = "0"
-
-[node name="Label2" type="Label" parent="Panel/CurrentGoldLabel" unique_id=587477447]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -47.0
-offset_top = -5.0
-offset_right = 51.0
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.40069774, 0.40069774, 0.40069768, 1)
-theme_override_font_sizes/font_size = 8
-text = "Max. 100 Gold"
 
 [node name="Label" type="Label" parent="Panel" unique_id=2075116601]
 layout_mode = 1
@@ -72,6 +76,7 @@ layout_mode = 0
 offset_top = 384.0
 offset_right = 176.0
 offset_bottom = 490.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3q2kr")
 
 [node name="Label2" type="Label" parent="Panel2" unique_id=414194650]
 layout_mode = 1

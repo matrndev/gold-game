@@ -14,12 +14,11 @@ func _on_body_entered(body: Node2D) -> void:
 		var space_left = 100 - StoredStats.gold_inventory
 		var gold_to_give = min(current_gold, space_left)
 		
-		if current_gold == 0:
-			return
+		if not current_gold == 0 and not gold_to_give == 0:
+			StoredStats.add_transaction(gold_to_give, "Gold Mine")
+			StoredStats.gold_inventory += gold_to_give
+			current_gold -= gold_to_give
 		
-		StoredStats.gold_transactions.append(gold_to_give)
-		StoredStats.gold_inventory += gold_to_give
-		current_gold -= gold_to_give
 		update_gold_meter()
 
 

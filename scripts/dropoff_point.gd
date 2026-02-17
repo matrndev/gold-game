@@ -18,4 +18,4 @@ func _on_drop_speed_timeout() -> void:
 	if StoredStats.gold_inventory > 0:
 		StoredStats.stored_gold += 1
 		StoredStats.gold_inventory -= 1
-		StoredStats.gold_transactions.append(-1)
+		StoredStats.add_transaction(-1, "Storage")
