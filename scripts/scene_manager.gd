@@ -21,8 +21,8 @@ func mining_scene_active(active: bool) -> void:
 		area.set_deferred("monitoring", active)
 		area.set_deferred("monitorable", active)
 
-	for area in mining_facility_scene.find_children("WorldBoundary*", "CollisionShape2D", true, false): # make boundaries disabled
-		area.set_deferred("disabled", !active)
+	#for area in mining_facility_scene.find_children("WorldBoundary*", "CollisionShape2D", true, false): # make boundaries disabled
+		#area.set_deferred("disabled", !active)
 	
 	# retain the player from the mining scene, but hide everything else
 	for child in mining_facility_scene.get_children():

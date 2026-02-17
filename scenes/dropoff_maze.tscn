@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://ceicr8kws2df6" path="res://scenes/teleport.tscn" id="4_rks7g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ari78"]
-vertices = PackedVector2Array(527.3828, 891, 296.0078, 663.72656, 289.14844, 126.84375, 971, 241.45313, 971, 346.65625, 917.90625, 916.96875, 1432.6875, 225.75, 1531.4766, 866.89844, 1252.5313, 346.53125, 319.6328, 889.0625, 276.32813, 787.71875, 1153.1484, 353.0078, 1280.7813, 254.6875)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 5, 8), PackedInt32Array(0, 9, 10, 1), PackedInt32Array(5, 4, 11), PackedInt32Array(5, 11, 8), PackedInt32Array(6, 8, 12)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(279, 115, 981, 233, 981, 337, 1153, 343, 1245, 337, 1273, 246, 1441, 214, 1543, 876, 918, 927, 527, 901, 313, 899, 266, 789, 286, 663)])
+vertices = PackedVector2Array(1255.2422, 346.35156, 1250.25, 147.04688, 1579.7578, 148.9375, 1561.2188, 951.1328, 915.8281, 959.97656, 1153.1484, 353.0078, 971.3594, 346.67188, 527.39844, 890.90625, 264.96875, 674.96875, 288.54688, 125.53906, 964.35156, 162.49219, 287.60938, 914.2969, 245.28125, 803.8906)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(6, 5, 4, 7, 8), PackedInt32Array(8, 9, 10, 6), PackedInt32Array(8, 7, 11, 12)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(279, 115, 974, 153, 981, 337, 1153, 343, 1245, 337, 1240, 137, 1590, 139, 1571, 961, 915, 970, 527, 901, 281, 925, 235, 805, 255, 674)])
 
 [node name="DropoffMaze" type="Node2D" unique_id=226396710]
 script = ExtResource("1_5cneu")
