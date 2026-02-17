@@ -1,4 +1,7 @@
 # Idle Gold
+
+<img width="999" height="566" alt="game screenshot" src="https://github.com/user-attachments/assets/45635a2b-965d-4246-b4a9-074c54d8552d" />
+
 An idle-style game where you collect gold from gold mines and upgrade those mines for the gold you collected.
 
 But there's a twist! To redeem the gold you collected, you first have to go to a Dropoff Point, which is surrounded by enemies who steal your precious gold. Click on the enemies to combat them!
