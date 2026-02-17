@@ -1,6 +1,8 @@
 # Idle Gold
 
 <img width="999" height="566" alt="game screenshot" src="https://github.com/user-attachments/assets/45635a2b-965d-4246-b4a9-074c54d8552d" />
+<img width="999" height="566" alt="game screenshot" src="https://github.com/user-attachments/assets/18530c81-afde-4911-8250-e2b7644b1fb4" />
+
 
 An idle-style game where you collect gold from gold mines and upgrade those mines for the gold you collected.
 
