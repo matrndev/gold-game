@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var movement_speed: float = 150.0
 @export var health: int = 8
 var movement_target_position: Vector2
+var gold_stolen: int = 0
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -10,6 +11,8 @@ var movement_target_position: Vector2
 func _ready() -> void:
 	navigation_agent.path_desired_distance = 4.0
 	navigation_agent.target_desired_distance = 4.0
+	$HealthLabel.text = str(health)
+	$GoldStolenLabel.text = str(gold_stolen)
 	
 	actor_setup.call_deferred()
 
@@ -47,7 +50,9 @@ func _on_stealing_timer_timeout() -> void:
 	if StoredStats.gold_inventory <= 0:
 		return
 	StoredStats.gold_inventory -= 1
-	StoredStats.gold_transactions.append(-1)
+	gold_stolen += 1
+	$GoldStolenLabel.text = str(gold_stolen)
+	StoredStats.add_transaction(-1, "Enemy")
 
 var tween: Tween
 func _on_kill_button_pressed() -> void:
@@ -58,5 +63,6 @@ func _on_kill_button_pressed() -> void:
 	tween.tween_property($ColorRect, "modulate", Color.WHITE, 0.3)
 	
 	health -= 1
+	$HealthLabel.text = str(health)
 	if health == 0:
 		queue_free()

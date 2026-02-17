@@ -11,6 +11,35 @@ size = Vector2(61, 88)
 [node name="Enemy" type="CharacterBody2D" unique_id=1309421750]
 script = ExtResource("1_7p1mj")
 
+[node name="HealthLabel" type="Label" parent="." unique_id=734429852]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 7.5
+offset_top = -19.0
+offset_right = 35.5
+offset_bottom = 4.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "7"
+horizontal_alignment = 1
+
+[node name="GoldStolenLabel" type="Label" parent="." unique_id=331072611]
+z_index = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 7.5
+offset_top = 1.0
+offset_right = 35.5
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "100"
+horizontal_alignment = 1
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1461643249]
 offset_right = 43.0
 offset_bottom = 71.0
